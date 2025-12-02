@@ -307,17 +307,17 @@
         if (engagement === 0 && gameplay === 0) {
             redFlags.push('Гра дуже нудна і має обмежений геймплей');
         }
-        if (negLoading === 0 && graphics <= 1) {
+        if (negLoading < 0 && graphics <= 1) {
             redFlags.push('Гра повільно завантажується і має проблеми з графікою');
         }
         if (clarity === 0 && engagement <= 0) {
             redFlags.push('Гра важко зрозуміла і не викликає інтересу');
         }
         if (negLinks) {
-            redFlags.push('Є посилання на інші сайти (зниження балу)');
+            redFlags.push('Є посилання на інші сайти');
         }
         if (negMoreGames) {
-            redFlags.push('Є кнопка "більше ігор" з посиланням (зниження балу)');
+            redFlags.push('Є кнопка "більше ігор" з посиланням');
         }
 
         // Display red flags in modal
@@ -415,7 +415,7 @@
                 parts.push('актуальна тема');
             }
 
-            if (negLoading === 0) {
+            if (negLoading < 0) {
                 parts.push('повільно завантажується');
             }
 
