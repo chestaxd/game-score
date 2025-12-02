@@ -85,8 +85,9 @@
                     <select id="engagement" class="w-full p-2 border rounded-lg text-sm bg-white">
                         <option value="-1">-1 — враження що гра працює не правильно або зламана</option>
                         <option value="0">0 — дуже нудна, нецікава гра</option>
-                        <option value="1" selected>1 — ниже середньго, є цікаві моменти але загалом не захоплює</option>
-                        <option value="2">2 — цікава гра, може затягнути на деякий час</option>
+                        <option value="1" selected>1 — нижче середнього, є цікаві моменти але загалом не захоплює
+                        </option>
+                        <option value="2">2 — цікава гра, може затягнути на деский час</option>
                         <option value="3">3 — захоплююча, хочеться грати далі і далі</option>
                     </select>
                 </div>
@@ -125,7 +126,7 @@
                     <select id="ads" class="w-full p-2 border rounded-lg text-sm bg-white">
                         <option value="-1">-1 — заважає ігровому процесу, вискакує на кожному кроці</option>
                         <option value="0">0 — багато реклами але терпимо, прям на межі</option>
-                        <option value="1" selected>1 — є реклама та іноді заважає ігровому процесу і вискакую частіше
+                        <option value="1" selected>1 — є реклама та іноді заважає ігровому процесу і вискакуює частіше
                             чим раз на 1-2 хвилини
                         </option>
                         <option value="2">2 — є, але не заважає ігровому процесу, з'являється не частіше чем раз на 2-3
@@ -138,7 +139,7 @@
                 <div>
                     <label class="text-sm font-medium text-gray-700 block mb-2">✨ Унікальність</label>
                     <select id="uniqueness" class="w-full p-2 border rounded-lg text-sm bg-white">
-                        <option value="0">0 — дублює наявні ігри, відміняється в маленьких деталях</option>
+                        <option value="0">0 — дублює наявні ігри, відмінняється в маленьких деталях</option>
                         <option value="1" selected>1 — схожа, але є відмінності</option>
                         <option value="2">2 — унікальна</option>
                     </select>
@@ -166,7 +167,7 @@
                 </div>
 
                 <div>
-                    <label class="text-sm font-medium text-gray-700 block mb-2">🖥️ Праює на повний екран, не
+                    <label class="text-sm font-medium text-gray-700 block mb-2">🖥️ Працює на повний екран, не
                         обрізається і не висить в якомусь куті</label>
                     <div class="flex items-center gap-3">
                         <span class="text-sm text-gray-600">Ні</span>
@@ -178,27 +179,52 @@
                     </div>
                 </div>
 
-                <div>
-                    <label class="text-sm font-medium text-gray-700 block mb-2">📅 Тренд/сезонність</label>
-                    <div class="flex items-center gap-3">
-                        <span class="text-sm text-gray-600">Ні</span>
-                        <label class="switch">
-                            <input type="checkbox" id="trend">
-                            <span class="slider"></span>
+                <div class="bg-green-50 p-4 rounded-lg border-2 border-green-300 mt-4">
+                    <label class="text-lg font-bold text-green-800 block mb-3">✅ Позитивні характеристики</label>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="pos_recognizable" class="w-4 h-4">
+                            <span class="text-sm text-gray-700">Впізнавана гра або серія ігор (+2 бали)</span>
                         </label>
-                        <span class="text-sm text-gray-600">Актуально</span>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="pos_multiplayer" class="w-4 h-4">
+                            <span class="text-sm text-gray-700">Мультиплеєр/кооператив (+1 бал)</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="pos_trend" class="w-4 h-4">
+                            <span class="text-sm text-gray-700">Актуальна тематика/тренд (+1 бал)</span>
+                        </label>
                     </div>
                 </div>
 
-                <div>
-                    <label class="text-sm font-medium text-gray-700 block mb-2">⚡ Швидкість завантаження</label>
-                    <div class="flex items-center gap-3">
-                        <span class="text-sm text-gray-600">Повільно</span>
-                        <label class="switch">
-                            <input type="checkbox" id="loading" checked>
-                            <span class="slider"></span>
+                <div class="bg-red-50 p-4 rounded-lg border-2 border-red-300 mt-4">
+                    <label class="text-lg font-bold text-red-800 block mb-3">⚠️ Негативні характеристики</label>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="neg_links" class="w-4 h-4">
+                            <span class="text-sm text-gray-700">Посилання на інші сайти (-2 бали)</span>
                         </label>
-                        <span class="text-sm text-gray-600">Швидко (до 20 секунт)</span>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="neg_more_games" class="w-4 h-4">
+                            <span class="text-sm text-gray-700">Кнопка "більше ігор" з посиланням (-2 бали)</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="neg_logo" class="w-4 h-4">
+                            <span class="text-sm text-gray-700">Лого інших сайтів при завантаженні (-1 бал)</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="neg_overlay" class="w-4 h-4">
+                            <span class="text-sm text-gray-700">Зайвий оверлей з кнопками (-1 бал)</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="neg_unfriendly" class="w-4 h-4">
+                            <span class="text-sm text-gray-700">Не зручний інтерфейс (-1 бал)</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="neg_loading" class="w-4 h-4">
+                            <span class="text-sm text-gray-700">Довге завантаження гри (понад 20-30 секунд) (-1 бал)</span>
+                        </label>
+
                     </div>
                 </div>
 
@@ -250,8 +276,19 @@
         const mobile = document.getElementById('mobile').checked ? 1 : 0;
         const uniqueness = +document.getElementById('uniqueness').value;
         const fullscreen = document.getElementById('fullscreen').checked ? 1 : 0;
-        const trend = document.getElementById('trend').checked ? 1 : 0;
-        const loading = document.getElementById('loading').checked ? 1 : 0;
+
+        // Get negative characteristics
+        const negLinks = document.getElementById('neg_links').checked ? -2 : 0;
+        const negMoreGames = document.getElementById('neg_more_games').checked ? -2 : 0;
+        const negLogo = document.getElementById('neg_logo').checked ? -1 : 0;
+        const negOverlay = document.getElementById('neg_overlay').checked ? -1 : 0;
+        const negUnfriendly = document.getElementById('neg_unfriendly').checked ? -1 : 0;
+        const negLoading = document.getElementById('neg_loading').checked ? -1 : 0;
+
+        // Get positive characteristics
+        const posRecognizable = document.getElementById('pos_recognizable').checked ? 2 : 0;
+        const posMultiplayer = document.getElementById('pos_multiplayer').checked ? 1 : 0;
+        const posTrend = document.getElementById('pos_trend').checked ? 1 : 0;
 
         // Check for red flags
         const redFlags = [];
@@ -262,7 +299,7 @@
             redFlags.push('Реклама сильно заважає ігровому процесу');
         }
         if (mobile === 0 && partner === 0) {
-            redFlags.push('Немає монетизації І не працює на мобільних');
+            redFlags.push('Немає монетизації і не працює на мобільних');
         }
         if (engagement === -1) {
             redFlags.push('Гра викликає враження що вона зламана або працює неправильно');
@@ -270,11 +307,17 @@
         if (engagement === 0 && gameplay === 0) {
             redFlags.push('Гра дуже нудна і має обмежений геймплей');
         }
-        if (loading === 0 && graphics <= 1) {
+        if (negLoading === 0 && graphics <= 1) {
             redFlags.push('Гра повільно завантажується і має проблеми з графікою');
         }
         if (clarity === 0 && engagement <= 0) {
             redFlags.push('Гра важко зрозуміла і не викликає інтересу');
+        }
+        if (negLinks) {
+            redFlags.push('Є посилання на інші сайти (зниження балу)');
+        }
+        if (negMoreGames) {
+            redFlags.push('Є кнопка "більше ігор" з посиланням (зниження балу)');
         }
 
         // Display red flags in modal
@@ -287,11 +330,6 @@
             modalRedFlagsDiv.classList.add('hidden');
         }
 
-        // Calculate weighted score
-
-        const total = graphics + gameplay + engagement + clarity + partner + ads + impression + mobile + uniqueness +
-          fullscreen + trend + loading;
-
         const maxGraphics = 3;
         const maxGameplay = 3;
         const maxEngagement = 3;
@@ -302,13 +340,19 @@
         const maxImpression = 2;
         const maxMobile = 1;
         const maxFullscreen = 1;
-        const maxTrend = 1;
-        const maxLoading = 1;
+
+        const posRecognizableMax = 2;
+        const posMultiplayerMax = 1;
+        const posTrendMax = 1;
 
         const maxScore = maxGraphics + maxGameplay + maxEngagement + maxPartner + maxAds + maxImpression + maxMobile +
-          maxFullscreen + maxUniqueness + maxTrend + maxLoading + maxClarity;
+          maxFullscreen + maxUniqueness + maxClarity + posRecognizableMax + posMultiplayerMax +
+          posTrendMax;
 
-        console.log(maxScore, total);
+        // Calculate weighted score
+        let total = graphics + gameplay + engagement + clarity + partner + ads + impression + mobile + uniqueness +
+          fullscreen + negLoading + negLinks + negMoreGames + negLogo + negOverlay + negUnfriendly +
+          posRecognizable + posMultiplayer + posTrend;
 
         let decision = '';
         let bgColor = '';
@@ -367,11 +411,11 @@
                 parts.push('не працює на мобільних');
             }
 
-            if (trend === 1) {
+            if (posTrend === 1) {
                 parts.push('актуальна тема');
             }
 
-            if (loading === 0) {
+            if (negLoading === 0) {
                 parts.push('повільно завантажується');
             }
 
@@ -382,6 +426,24 @@
             } else if (clarity === 1) {
                 parts.push('зрозуміла, але є моменти які не очевидні');
             }
+
+            if (negLinks) {
+                parts.push('є посилання на інші сайти');
+            }
+            if (negMoreGames) {
+                parts.push('є кнопка "більше ігор"');
+            }
+            if (negLogo) {
+                parts.push('є лого інших сайтів');
+            }
+            if (negOverlay) {
+                parts.push('зайвий оверлей');
+            }
+
+            if (negUnfriendly) {
+                parts.push('не зручний інтерфейс');
+            }
+
             return parts.join(', ') + '.';
         }
 
@@ -391,11 +453,11 @@
             decision = 'ДОДАВАТИ ОБОВ\'ЯЗКОВО';
             bgColor = 'bg-green-100 border-2 border-green-500';
             textColor = 'text-green-700';
-        } else if (total >= 15) {
+        } else if (total >= 13) {
             decision = 'МОЖНА ДОДАВАТИ';
             bgColor = 'bg-yellow-50 border-2 border-yellow-400';
             textColor = 'text-yellow-700';
-        } else if (total >= 7) {
+        } else if (total >= 10) {
             decision = 'СУМНІВНО, СКОРІШЕ НЕ ДОДАВАТИ';
             bgColor = 'bg-orange-50 border-2 border-orange-400';
             textColor = 'text-orange-700';
@@ -408,7 +470,7 @@
         const modalResultDiv = document.getElementById('modalResult');
         modalResultDiv.className = `p-6 rounded-lg text-center ${bgColor}`;
 
-        document.getElementById('modalTotalScore').textContent = `Загальний бал: ${total.toFixed(1)} / ${maxScore}`;
+        document.getElementById('modalTotalScore').textContent = `Загальний бал: ${total.toFixed(0)} / ${maxScore}`;
         document.getElementById('modalTotalScore').className = `text-3xl font-bold mb-3 ${textColor}`;
 
         document.getElementById('modalDecision').textContent = decision;
