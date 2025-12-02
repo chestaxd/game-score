@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Score Calculator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -67,33 +67,38 @@
             <form id="scoreForm" class="space-y-4">
 
                 <div class="bg-orange-50 p-3 rounded-lg border-2 border-orange-300">
-                    <label class="text-sm font-bold text-gray-800 block mb-2">🎨 Графіка / FPS / фізика [×1.5]</label>
+                    <label class="text-sm font-bold text-gray-800 block mb-2">🎨 Графіка / FPS / фізика</label>
                     <select id="graphics" class="w-full p-2 border rounded-lg text-sm bg-white">
                         <option value="-1">-1 — критично погано, дуже погано виглядає, зависає і т.д.</option>
                         <option value="0">0 — погано виглядає, але працює нормально</option>
-                        <option value="1">1 — виглядає нормально, але гра тормозить</option>
-                        <option value="2" selected>2 — виглядає нормально, все працює відмінно, або виглядає чудово але
+                        <option value="1" selected>1 — виглядає нормально, але гра тормозить, або працює нормально але
+                            жахливо виглядає
+                        </option>
+                        <option value="2">2 — виглядає нормально, все працює відмінно, або виглядає чудово але
                             має проблеми з технічної сторони
                         </option>
-                        <option value="3">3 — чудово</option>
+                        <option value="3">3 — крута графіка, все працює відмінно</option>
                     </select>
                 </div>
                 <div class="bg-blue-50 p-3 rounded-lg border-2 border-blue-300">
-                    <label class="text-sm font-bold text-gray-800 block mb-2">🕹️ Геймплейна залученість [×1.5]</label>
+                    <label class="text-sm font-bold text-gray-800 block mb-2">🕹️ Геймплейна залученість</label>
                     <select id="engagement" class="w-full p-2 border rounded-lg text-sm bg-white">
                         <option value="-1">-1 — враження що гра працює не правильно або зламана</option>
                         <option value="0">0 — дуже нудна, нецікава гра</option>
-                        <option value="1" selected>1 — середня, є цікаві моменти але загалом не захоплює</option>
-                        <option value="2">2 — захоплююча, хочеться грати далі і далі</option>
+                        <option value="1" selected>1 — ниже середньго, є цікаві моменти але загалом не захоплює</option>
+                        <option value="2">2 — цікава гра, може затягнути на деякий час</option>
+                        <option value="3">3 — захоплююча, хочеться грати далі і далі</option>
                     </select>
                 </div>
 
                 <div class="bg-indigo-50 p-3 rounded-lg border-2 border-indigo-300">
-                    <label class="text-sm font-bold text-gray-800 block mb-2">🎮 Геймплейна глибина [×1.5]</label>
+                    <label class="text-sm font-bold text-gray-800 block mb-2">🎮 Геймплейна глибина</label>
                     <select id="gameplay" class="w-full p-2 border rounded-lg text-sm bg-white">
                         <option value="0">0 — на 10-20 хв</option>
-                        <option value="1" selected>1 — Є рівні, середня тривалість(гра на вечір)</option>
-                        <option value="2">2 — Багато контенту або затягує надовго, безкінечна з прогресією</option>
+                        <option value="1" selected>1 — Є рівні, середня тривалість(гра на декілька годин максимум)
+                        </option>
+                        <option value="2">2 — Довга гра з великою кількістю контенту</option>
+                        <option value="3">3 — Багато контенту або затягує надовго, безкінечна з прогресією</option>
                     </select>
                 </div>
 
@@ -120,11 +125,22 @@
                     <select id="ads" class="w-full p-2 border rounded-lg text-sm bg-white">
                         <option value="-1">-1 — заважає ігровому процесу, вискакує на кожному кроці</option>
                         <option value="0">0 — багато реклами але терпимо, прям на межі</option>
-                        <option value="1" selected>1 — помірна кількість. З'являється після кожного рівня або якоїсь
-                            конкретної дії
+                        <option value="1" selected>1 — є реклама та іноді заважає ігровому процесу і вискакую частіше
+                            чим раз на 1-2 хвилини
                         </option>
-                        <option value="2">2 — майже не заважає</option>
-                        <option value="3">3 — відсутня або зовсім не заважає</option>
+                        <option value="2">2 — є, але не заважає ігровому процесу, з'являється не частіше чем раз на 2-3
+                            хвилини
+                        </option>
+                        <option value="3">3 — відсутня або майже не заважає</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="text-sm font-medium text-gray-700 block mb-2">✨ Унікальність</label>
+                    <select id="uniqueness" class="w-full p-2 border rounded-lg text-sm bg-white">
+                        <option value="0">0 — дублює наявні ігри, відміняється в маленьких деталях</option>
+                        <option value="1" selected>1 — схожа, але є відмінності</option>
+                        <option value="2">2 — унікальна</option>
                     </select>
                 </div>
 
@@ -151,7 +167,7 @@
 
                 <div>
                     <label class="text-sm font-medium text-gray-700 block mb-2">🖥️ Праює на повний екран, не
-                        обрізається</label>
+                        обрізається і не висить в якомусь куті</label>
                     <div class="flex items-center gap-3">
                         <span class="text-sm text-gray-600">Ні</span>
                         <label class="switch">
@@ -160,15 +176,6 @@
                         </label>
                         <span class="text-sm text-gray-600">Так</span>
                     </div>
-                </div>
-
-                <div>
-                    <label class="text-sm font-medium text-gray-700 block mb-2">✨ Унікальність</label>
-                    <select id="uniqueness" class="w-full p-2 border rounded-lg text-sm bg-white">
-                        <option value="0">0 — дублює наявні ігри, відміняється в маленьких деталях</option>
-                        <option value="1" selected>1 — схожа, але є відмінності</option>
-                        <option value="2">2 — унікальна</option>
-                    </select>
                 </div>
 
                 <div>
@@ -200,21 +207,33 @@
                     Розрахувати
                 </button>
             </form>
+        </div>
+    </div>
+</div>
 
-            <!-- Red Flags Warning -->
-            <div id="redFlags" class="mt-4 p-4 bg-red-100 border-2 border-red-500 rounded-lg hidden">
-                <div class="text-lg font-bold text-red-800 mb-2">⚠️ КРИТИЧНІ ПРОБЛЕМИ:</div>
-                <ul id="redFlagsList" class="text-sm text-red-700 space-y-1 list-disc pl-5"></ul>
+<!-- Modal -->
+<div id="resultModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-gray-800">Результат оцінки</h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700 text-3xl font-bold">&times;
+                </button>
             </div>
 
-            <!-- Result -->
-            <div id="result" class="mt-4 p-4 rounded-lg text-center hidden">
-                <div class="text-3xl font-bold mb-3" id="totalScore"></div>
-                <div class="text-xl font-bold mb-2" id="decision"></div>
-                <div class="text-sm text-gray-700 leading-relaxed" id="description"></div>
+            <!-- Red Flags in Modal -->
+            <div id="modalRedFlags" class="mb-4 p-4 bg-red-100 border-2 border-red-500 rounded-lg hidden">
+                <div class="text-lg font-bold text-red-800 mb-2">⚠️ КРИТИЧНІ ПРОБЛЕМИ:</div>
+                <ul id="modalRedFlagsList" class="text-sm text-red-700 space-y-1 list-disc pl-5"></ul>
+            </div>
+
+            <!-- Result in Modal -->
+            <div id="modalResult" class="p-6 rounded-lg text-center">
+                <div class="text-3xl font-bold mb-3" id="modalTotalScore"></div>
+                <div class="text-4xl font-bold mb-4" id="modalDecision"></div>
+                <div class="text-sm text-gray-700 leading-relaxed" id="modalDescription"></div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -229,8 +248,8 @@
         const ads = +document.getElementById('ads').value;
         const impression = +document.getElementById('impression').value;
         const mobile = document.getElementById('mobile').checked ? 1 : 0;
-        const fullscreen = document.getElementById('fullscreen').checked ? 1 : 0;
         const uniqueness = +document.getElementById('uniqueness').value;
+        const fullscreen = document.getElementById('fullscreen').checked ? 1 : 0;
         const trend = document.getElementById('trend').checked ? 1 : 0;
         const loading = document.getElementById('loading').checked ? 1 : 0;
 
@@ -245,42 +264,51 @@
         if (mobile === 0 && partner === 0) {
             redFlags.push('Немає монетизації І не працює на мобільних');
         }
-
         if (engagement === -1) {
             redFlags.push('Гра викликає враження що вона зламана або працює неправильно');
         }
-
         if (engagement === 0 && gameplay === 0) {
             redFlags.push('Гра дуже нудна і має обмежений геймплей');
         }
-
         if (loading === 0 && graphics <= 1) {
             redFlags.push('Гра повільно завантажується і має проблеми з графікою');
         }
-
         if (clarity === 0 && engagement <= 0) {
             redFlags.push('Гра важко зрозуміла і не викликає інтересу');
         }
 
-        // Display red flags
-        const redFlagsDiv = document.getElementById('redFlags');
+        // Display red flags in modal
+        const modalRedFlagsDiv = document.getElementById('modalRedFlags');
         if (redFlags.length > 0) {
-            redFlagsDiv.classList.remove('hidden');
-            const flagsList = document.getElementById('redFlagsList');
+            modalRedFlagsDiv.classList.remove('hidden');
+            const flagsList = document.getElementById('modalRedFlagsList');
             flagsList.innerHTML = redFlags.map(flag => `<li>${flag}</li>`).join('');
         } else {
-            redFlagsDiv.classList.add('hidden');
+            modalRedFlagsDiv.classList.add('hidden');
         }
 
         // Calculate weighted score
-        const graphicsWeighted = graphics * 1.5;
-        const gameplayWeighted = gameplay * 1.5;
-        const engagementWeighted = engagement * 1.5;
 
-        const total = graphicsWeighted + gameplayWeighted + partner + ads + impression +
-            mobile + fullscreen + uniqueness + trend + loading + clarity + engagementWeighted;
+        const total = graphics + gameplay + engagement + clarity + partner + ads + impression + mobile + uniqueness +
+          fullscreen + trend + loading;
 
-        const maxScore = 3 * 1.5 + 2 * 1.5 + 2 * 1.5 + 2 + 3 + 2 + 1 + 1 + 2 + 1 + 2 + 2; // 26.5
+        const maxGraphics = 3;
+        const maxGameplay = 3;
+        const maxEngagement = 3;
+        const maxClarity = 2;
+        const maxPartner = 2;
+        const maxAds = 3;
+        const maxUniqueness = 2;
+        const maxImpression = 2;
+        const maxMobile = 1;
+        const maxFullscreen = 1;
+        const maxTrend = 1;
+        const maxLoading = 1;
+
+        const maxScore = maxGraphics + maxGameplay + maxEngagement + maxPartner + maxAds + maxImpression + maxMobile +
+          maxFullscreen + maxUniqueness + maxTrend + maxLoading + maxClarity;
+
+        console.log(maxScore, total);
 
         let decision = '';
         let bgColor = '';
@@ -289,7 +317,6 @@
         function generateDescription() {
             const parts = [];
 
-            // Graphics/FPS analysis
             if (graphics === 3) {
                 parts.push('чудова графіка та плавність');
             } else if (graphics === 2) {
@@ -302,7 +329,6 @@
                 parts.push('критичні проблеми з графікою');
             }
 
-            // Gameplay analysis
             if (gameplay === 2) {
                 parts.push('багато контенту');
             } else if (gameplay === 1) {
@@ -311,7 +337,6 @@
                 parts.push('обмежений геймплей');
             }
 
-            // Partner analysis
             if (partner === 2) {
                 parts.push('топ-партнер');
             } else if (partner === 1) {
@@ -320,7 +345,6 @@
                 parts.push('без партнера');
             }
 
-            // Ads analysis
             if (ads === 3) {
                 parts.push('без реклами');
             } else if (ads === 2) {
@@ -333,29 +357,24 @@
                 parts.push('реклама заважає');
             }
 
-            // Uniqueness
             if (uniqueness === 2) {
                 parts.push('унікальна механіка');
             } else if (uniqueness === 0) {
                 parts.push('дублює існуючі ігри');
             }
 
-            // Mobile
             if (mobile === 0) {
                 parts.push('не працює на мобільних');
             }
 
-            // Trend
             if (trend === 1) {
                 parts.push('актуальна тема');
             }
 
-            // Loading
             if (loading === 0) {
                 parts.push('повільно завантажується');
             }
 
-            //Clarity
             if (clarity === 2) {
                 parts.push('інтуїтивно зрозуміла');
             } else if (clarity === 0) {
@@ -366,18 +385,17 @@
             return parts.join(', ') + '.';
         }
 
-
         const description = generateDescription().charAt(0).toUpperCase() + generateDescription().slice(1);
 
-        if (total >= 22) {
+        if (total >= 18) {
             decision = 'ДОДАВАТИ ОБОВ\'ЯЗКОВО';
             bgColor = 'bg-green-100 border-2 border-green-500';
             textColor = 'text-green-700';
-        } else if (total >= 16) {
+        } else if (total >= 15) {
             decision = 'МОЖНА ДОДАВАТИ';
             bgColor = 'bg-yellow-50 border-2 border-yellow-400';
             textColor = 'text-yellow-700';
-        } else if (total >= 10) {
+        } else if (total >= 7) {
             decision = 'СУМНІВНО, СКОРІШЕ НЕ ДОДАВАТИ';
             bgColor = 'bg-orange-50 border-2 border-orange-400';
             textColor = 'text-orange-700';
@@ -387,17 +405,25 @@
             textColor = 'text-red-700';
         }
 
-        const resultDiv = document.getElementById('result');
-        resultDiv.className = `mt-4 p-4 rounded-lg text-center ${bgColor}`;
-        resultDiv.classList.remove('hidden');
+        const modalResultDiv = document.getElementById('modalResult');
+        modalResultDiv.className = `p-6 rounded-lg text-center ${bgColor}`;
 
-        document.getElementById('totalScore').textContent = `Загальний бал: ${total.toFixed(1)} / ${maxScore}`;
-        document.getElementById('totalScore').className = `text-3xl font-bold mb-3 ${textColor}`;
+        document.getElementById('modalTotalScore').textContent = `Загальний бал: ${total.toFixed(1)} / ${maxScore}`;
+        document.getElementById('modalTotalScore').className = `text-3xl font-bold mb-3 ${textColor}`;
 
-        document.getElementById('decision').textContent = decision;
-        document.getElementById('decision').className = `text-4xl font-bold mb-2 ${textColor}`;
+        document.getElementById('modalDecision').textContent = decision;
+        document.getElementById('modalDecision').className = `text-4xl font-bold mb-4 ${textColor}`;
 
-        document.getElementById('description').textContent = description;
+        document.getElementById('modalDescription').textContent = description;
+
+        // Show modal
+        document.getElementById('resultModal').classList.remove('hidden');
+        document.getElementById('resultModal').classList.add('flex');
+    }
+
+    function closeModal() {
+        document.getElementById('resultModal').classList.add('hidden');
+        document.getElementById('resultModal').classList.remove('flex');
     }
 </script>
 
